@@ -1,0 +1,235 @@
+:root {
+    --bg-color: #0f0f1a;
+    --accent: #7f5af0;
+    --text-color: #ffffff;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    color: white;
+    background: linear-gradient(-45deg, #0f0f1a, #1a1a2e, #16213e, #0f3460);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+    transition: background 0.8s ease;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+#quote {
+    margin: 20px 0;
+    opacity: 0.8;
+}
+
+#timer {
+    font-size: 3rem;
+    margin: 20px 0;
+    transition: text-shadow 0.5s ease;
+}
+
+.focus-active #timer {
+    text-shadow: 0 0 10px #7f5af0,
+        0 0 20px #7f5af0,
+        0 0 40px #7f5af0;
+}
+
+.sound-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#player {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 22px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 22px;
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked+.slider {
+    background: #6c63ff;
+}
+
+input:checked+.slider::before {
+    transform: translateX(20px);
+}
+
+.sound-label {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.theme-select {
+    background: transparent;
+    border: none;
+    color: white;
+    border-bottom: 1px solid var(--accent);
+    outline: none;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+select {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    font-size: 14px;
+    outline: none;
+    appearance: none;
+    /* remove estilo padrão */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+select option {
+    background: #1a1a2e;
+    color: #ffffff;
+}
+
+.time-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.time-control input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--accent);
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    width: 50px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.time-control input:focus {
+    border-color: white;
+}
+
+.time-control span {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Remove setinhas no Chrome, Edge, Safari */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove setinhas no Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.time-control input {
+    caret-color: var(--accent);
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.controls button {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.controls button:hover {
+    background: var(--accent);
+    color: white;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 0.85rem;
+    opacity: 0.5;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #7f5af0;
+    transition: all 0.3s ease;
+}
+
+footer:hover {
+    opacity: 1;
+    letter-spacing: 3px;
+}
