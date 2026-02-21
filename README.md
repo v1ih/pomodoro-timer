@@ -47,7 +47,7 @@ LocalStorage.
 
 
 
-🌐 Live Version: 
+🌐 Live Version: https://v1ih.github.io/pomodoro-timer/ 
 
 
 
