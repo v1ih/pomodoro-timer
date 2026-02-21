@@ -179,8 +179,7 @@ function onYouTubeIframeAPIReady() {
         playerVars: {
             autoplay: 0,
             controls: 0,
-            rel: 0,
-            origin: "https://v1ih.github.io"
+            rel: 0
         },
         events: {
             onReady: function () {
@@ -239,5 +238,6 @@ function applyTheme(theme) {
     }
 
 }
+
 
 
