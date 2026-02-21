@@ -179,8 +179,7 @@ function onYouTubeIframeAPIReady() {
         playerVars: {
             autoplay: 0,
             controls: 0,
-            rel: 0,
-            origin: window.location.origin
+            rel: 0
         },
         events: {
             onReady: function () {
@@ -237,4 +236,5 @@ function applyTheme(theme) {
         document.body.style.background =
             "linear-gradient(-45deg, #0f0f1a, #1a1a2e, #16213e, #0f3460)";
     }
+
 }
