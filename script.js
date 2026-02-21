@@ -138,7 +138,7 @@ function saveState() {
 playBtn.addEventListener("click", () => {
 
     if (musicToggle.checked && !isPlayerReady) {
-        musicStatus.textContent = "Carregando música...";
+        musicStatus.textContent = "Loading music...";
         return;
     }
 
@@ -147,7 +147,7 @@ playBtn.addEventListener("click", () => {
     }
 
     if (musicToggle.checked && isPlayerReady) {
-        musicStatus.textContent = "Tocando lo-fi...";
+        musicStatus.textContent = "Playing lo-fi...";
         const randomVideo = getRandomLofi();
         player.loadVideoById(randomVideo);
         player.unMute();
@@ -184,15 +184,15 @@ function onYouTubeIframeAPIReady() {
         events: {
             onReady: function () {
                 isPlayerReady = true;
-                musicStatus.textContent = "Música pronta.";
+                musicStatus.textContent = "Music ready.";
             },
             onStateChange: function (event) {
                 if (event.data === YT.PlayerState.BUFFERING) {
-                    musicStatus.textContent = "Carregando música...";
+                    musicStatus.textContent = "Loading music...";
                 }
 
                 if (event.data === YT.PlayerState.PLAYING) {
-                    musicStatus.textContent = "Tocando lo-fi...";
+                    musicStatus.textContent = "Playing lo-fi...";
                 }
             }
         }
@@ -238,3 +238,4 @@ function applyTheme(theme) {
     }
 
 }
+
